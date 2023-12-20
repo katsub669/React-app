@@ -9,6 +9,7 @@ function Note(props) {
             <button
                 onClick = {
                     () => {
+                        //passing id to ./App to delete the correct note
                         props.delete(props.id);
                     }
                 }
