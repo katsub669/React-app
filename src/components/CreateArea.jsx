@@ -4,12 +4,14 @@ import Fab from '@mui/material/Fab';
 import Zoom from '@mui/material/Zoom';
 
 function CreateArea(props) {
+    //constant for exponding elements when textarea is clicked
     const [isClicked, setIsClicked] = useState(false);
+    //- constant that keeps track of the title and content.
     const [formText, setFromText] = useState({
         title: '',
         content: ''
     });
-
+    //- function that changes formText onChange in inputs.
     function handleChange(event) {
         const {value, name} = event.target;
         setFromText(prevValue => {
@@ -34,7 +36,9 @@ function CreateArea(props) {
             <Zoom in={isClicked}>
                 <Fab 
                     onClick={(event) => {
+                        //passing formText to ./App
                         props.addNote(formText);
+                        //clearing formText
                         setFromText(
                             {
                                 title: '',
